@@ -83,6 +83,17 @@ class WeatherListTableViewController: UITableViewController, AddWeatherDelegate,
             
             settingsVC.delegate = self
             
+        } else if segue.identifier == "WeatherDetailsSegueId" {
+            
+            guard let vc = segue.destination as? WeatherDetailsViewController,
+                let idexPath = tableView.indexPathForSelectedRow  else{
+                return
+            }
+            
+            let vm = weatherListViewModel.viewModel(atIndex: idexPath.row)
+            vc.weatherViewModel = vm
+            
+            
         }
         
         

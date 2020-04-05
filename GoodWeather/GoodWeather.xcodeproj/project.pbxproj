@@ -25,6 +25,7 @@
 		2A719EE02437A9D600A064AC /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A719EDF2437A9D600A064AC /* SettingsViewModel.swift */; };
 		2AC0F71E2439126A00AAC406 /* AddCityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC0F71D2439126A00AAC406 /* AddCityViewModel.swift */; };
 		2AC0F721243913EF00AAC406 /* BindingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC0F720243913EF00AAC406 /* BindingTextField.swift */; };
+		2AC0F7232439B97700AAC406 /* WeatherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC0F7222439B97700AAC406 /* WeatherDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		2A719EDF2437A9D600A064AC /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		2AC0F71D2439126A00AAC406 /* AddCityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewModel.swift; sourceTree = "<group>"; };
 		2AC0F720243913EF00AAC406 /* BindingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingTextField.swift; sourceTree = "<group>"; };
+		2AC0F7222439B97700AAC406 /* WeatherDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				2A1B498624311EE500B82671 /* WeatherListTableViewController.swift */,
 				2A1B498824311FAE00B82671 /* AddWeatherCityViewController.swift */,
 				2A719EDC2437A42F00A064AC /* SettingsViewController.swift */,
+				2AC0F7222439B97700AAC406 /* WeatherDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AC0F7232439B97700AAC406 /* WeatherDetailsViewController.swift in Sources */,
 				2A6103152433EBD700F7C709 /* Double+Extensions.swift in Sources */,
 				2AC0F721243913EF00AAC406 /* BindingTextField.swift in Sources */,
 				2A1B498724311EE500B82671 /* WeatherListTableViewController.swift in Sources */,
