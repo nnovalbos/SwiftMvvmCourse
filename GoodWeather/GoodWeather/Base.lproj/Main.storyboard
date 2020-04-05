@@ -114,13 +114,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hhy-FK-A8d">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add City Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hhy-FK-A8d" customClass="BindingTextField" customModule="GoodWeather" customModuleProvider="target">
                                 <rect key="frame" x="20" y="90" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Zip Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bkN-MP-F5Y" customClass="BindingTextField" customModule="GoodWeather" customModuleProvider="target">
+                                <rect key="frame" x="20" y="174" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bu7-Eg-UCu" customClass="BindingTextField" customModule="GoodWeather" customModuleProvider="target">
+                                <rect key="frame" x="20" y="132" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7F-FO-Rek">
-                                <rect key="frame" x="190" y="155" width="34" height="30"/>
+                                <rect key="frame" x="190" y="240" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="Save" destination="5y3-gY-NxI" eventType="touchUpInside" id="syV-CC-2Rm"/>
@@ -129,11 +139,17 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="hhy-FK-A8d" firstAttribute="trailing" secondItem="BW8-iX-js2" secondAttribute="trailingMargin" id="XYJ-1c-GKv"/>
-                            <constraint firstItem="hhy-FK-A8d" firstAttribute="leading" secondItem="BW8-iX-js2" secondAttribute="leadingMargin" id="Yix-Of-KfB"/>
-                            <constraint firstItem="hhy-FK-A8d" firstAttribute="top" secondItem="wsC-KP-tuL" secondAttribute="top" constant="34" id="ieG-za-XEh"/>
-                            <constraint firstItem="B7F-FO-Rek" firstAttribute="top" secondItem="hhy-FK-A8d" secondAttribute="bottom" constant="31" id="pAd-l7-BNq"/>
-                            <constraint firstItem="hhy-FK-A8d" firstAttribute="centerX" secondItem="B7F-FO-Rek" secondAttribute="centerX" id="wn0-hP-KsS"/>
+                            <constraint firstItem="hhy-FK-A8d" firstAttribute="leading" secondItem="BW8-iX-js2" secondAttribute="leadingMargin" id="48Q-xb-Efn"/>
+                            <constraint firstItem="Bu7-Eg-UCu" firstAttribute="top" secondItem="hhy-FK-A8d" secondAttribute="bottom" constant="8" id="9hq-VK-4AZ"/>
+                            <constraint firstItem="bkN-MP-F5Y" firstAttribute="top" secondItem="Bu7-Eg-UCu" secondAttribute="bottom" constant="8" id="GtX-TB-hf3"/>
+                            <constraint firstItem="hhy-FK-A8d" firstAttribute="trailing" secondItem="Bu7-Eg-UCu" secondAttribute="trailing" id="IGp-p1-bBO"/>
+                            <constraint firstItem="hhy-FK-A8d" firstAttribute="leading" secondItem="Bu7-Eg-UCu" secondAttribute="leading" id="OsZ-sE-ZFc"/>
+                            <constraint firstItem="bkN-MP-F5Y" firstAttribute="centerX" secondItem="B7F-FO-Rek" secondAttribute="centerX" id="Uly-yT-r0u"/>
+                            <constraint firstItem="hhy-FK-A8d" firstAttribute="trailing" secondItem="BW8-iX-js2" secondAttribute="trailingMargin" id="hNk-Ay-h2X"/>
+                            <constraint firstItem="Bu7-Eg-UCu" firstAttribute="leading" secondItem="bkN-MP-F5Y" secondAttribute="leading" id="hev-Ms-qhI"/>
+                            <constraint firstItem="Bu7-Eg-UCu" firstAttribute="trailing" secondItem="bkN-MP-F5Y" secondAttribute="trailing" id="n6T-nC-o83"/>
+                            <constraint firstItem="B7F-FO-Rek" firstAttribute="top" secondItem="bkN-MP-F5Y" secondAttribute="bottom" constant="32" id="pYw-DO-Naq"/>
+                            <constraint firstItem="hhy-FK-A8d" firstAttribute="top" secondItem="wsC-KP-tuL" secondAttribute="top" constant="34" id="r4R-9z-pTQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wsC-KP-tuL"/>
                     </view>
@@ -146,6 +162,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cityName" destination="hhy-FK-A8d" id="Jbk-Yc-PVX"/>
+                        <outlet property="stateName" destination="Bu7-Eg-UCu" id="B24-A6-oYd"/>
+                        <outlet property="zipCodeName" destination="bkN-MP-F5Y" id="cA4-xg-xeV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MwH-zY-l3z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
