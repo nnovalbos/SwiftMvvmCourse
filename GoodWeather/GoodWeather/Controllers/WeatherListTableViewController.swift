@@ -13,16 +13,23 @@ class WeatherListTableViewController: UITableViewController, AddWeatherDelegate,
    
 
     private var weatherListViewModel = WeatherListViewModel()
+    private var dataSource : TableViewDataSource<WeatherCell,WeatherViewModel>!
     
     override func viewDidLoad() {
     
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.dataSource = TableViewDataSource(cellIdentifier: "weatherCellIdentifier", items: weatherListViewModel.weatherViewModels){ cell, vm in
+            cell.cityNameLabel.text = vm.name.value
+            cell.temperatureLabel.text = vm.temperature.temperature.value.formatDegree
+        }
+        self.tableView.dataSource = dataSource
     }
     
     func addWeatherDidSave(vm: WeatherViewModel) {
         self.weatherListViewModel.AddWeatherViewModel(vm)
+        self.dataSource.updateItems(items:self.weatherListViewModel.weatherViewModels)
         tableView.reloadData()
     }
     
@@ -35,27 +42,6 @@ class WeatherListTableViewController: UITableViewController, AddWeatherDelegate,
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
-    }
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.weatherListViewModel.numberOfWeatherViewModels()
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCellIdentifier", for: indexPath) as! WeatherCell
-        
-        if let vm = weatherListViewModel.viewModel(atIndex: indexPath.row) {
-            
-            cell.configure(vm)
-        }
-        
-        return cell
-  
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct WeatherListViewModel {
+class WeatherListViewModel {
 
-    private var weatherViewModels = [WeatherViewModel]()
+    private(set) var weatherViewModels = [WeatherViewModel]()
     
-    mutating func AddWeatherViewModel(_ vm: WeatherViewModel){
+    func AddWeatherViewModel(_ vm: WeatherViewModel){
         self.weatherViewModels.append(vm)
     }
     
@@ -29,7 +29,7 @@ struct WeatherListViewModel {
         return self.weatherViewModels[index]
     }
     
-    mutating func updateUnit(to unit: Unit) {
+    func updateUnit(to unit: Unit) {
         switch unit {
         case .celsius:
             toCelsius()
@@ -38,7 +38,7 @@ struct WeatherListViewModel {
         }
     }
     
-    private mutating func toCelsius() {
+    private func toCelsius() {
         
         weatherViewModels = weatherViewModels.map { vm in
             let weatherVM = vm
@@ -47,7 +47,7 @@ struct WeatherListViewModel {
         }
     }
     
-    private mutating func toFahranheit() {
+    private func toFahranheit() {
         
         weatherViewModels = weatherViewModels.map { vm in
             let weatherVM = vm
