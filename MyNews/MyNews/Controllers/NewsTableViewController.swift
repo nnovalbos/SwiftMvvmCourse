@@ -11,7 +11,7 @@ import UIKit
 
 public class NewsTableViewController : UITableViewController {
     
-    private let API_KEY = "24bd5cd279c7425e9f36760bfcd14a57"
+    private let API_KEY = "YOUR_API_KEY"
     
     private var articleListViewModel : ArticleListViewModel!
     
